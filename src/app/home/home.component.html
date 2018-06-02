@@ -1,0 +1,45 @@
+<div class="row" style="position:relative">
+  <app-default-badge *ngFor="let badge of badges" [txt]="badge.txt" [img]="badge.img" [visible]="badge.visible"></app-default-badge>
+  <img class="img-responsive" src="../../assets/img/cinema_wallpaper.jpg" alt="cinema">
+</div>
+<section class="row defaultBackground">
+  <div class="col-lg-6">
+    <h4>My favorite movies</h4>
+    <p>
+      Use this form below to add a new film in your list. <br>
+      What do you want to watch ?
+    </p>
+    <form>
+      <input type="text" name="movie" placeholder="My movies ..." [(ngModel)]="movieText">
+      <button type="submit" class="btn" (click)="addMovie()"><i class="fa fa-plus"></i></button>
+      <div class="alert" *ngIf="error != -1">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        {{ errorMessages[error] }}
+      </div>
+    </form>
+  </div>
+  <div class="col-lg-6">
+    <h4>Your movie's list ({{ movies.length }})</h4>
+    <div class="panel-group">
+      <div class="panel card panel-default" *ngFor="let movie of movies; let i = index">
+        <div class="panel-heading card-header" role="tab">
+          <div class="panel-title">
+            <div class="accordion-toggle" role="button" aria-expanded="false">
+              <div>
+                {{ movie.name }}
+                <span class="choice">
+                  <span class="favorite" (click)="setFavoriteMovie(i)">
+                    <i class="fa {{ movie.class }}"></i>
+                  </span>
+                  <button class="close" aria-label="Remove" type="button" (click)="removeMovie(i)">
+                  <span aria-hidden="false">&times;</span>
+                  </button>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

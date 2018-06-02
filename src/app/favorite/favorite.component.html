@@ -1,0 +1,61 @@
+<section class="row defaultBackground" *ngIf="0 === favoriteMovies.length" >
+  <button class="btn" type="button" data-toggle="modal" data-target="#favoriteHint">
+    <i class="fa fa-question"></i>
+  </button>
+  <h1>Sorry !</h1>
+  <p class="txt">You didn't add any favorite movie</p>
+
+  <div class="modal fade" id="favoriteHint" tabindex="-1" role="dialog" aria-labelledby="favoriteHintTitle"
+       aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title pull-left" id="favoriteHintTitle">
+            How to add a movie to your favorite list ?
+          </h3>
+          <button type="button" class="close pull-right" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>
+            <strong>#1</strong>
+            Go Home
+          </p>
+          <img src="../../assets/img/HomeCapture.png" alt="Home">
+          <p>
+            <strong>#2</strong>
+            Create your movies list
+          </p>
+          <img src="../../assets/img/HomeListCapture.png" alt="Movies List">
+          <p>
+            <strong>#3</strong>
+            Click on movie's heart that you wish to add to your favorite list
+          </p>
+          <img src="../../assets/img/HomeFavoriteCapture.png" alt="Favorite Movie">
+          <p>
+            <strong>IT'S DONE ! </strong>
+            <i class="fa fa-smile-o"></i>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="row defaultBackground" *ngIf="0 !== favoriteMovies.length">
+  <div>
+      <div class="searchBox">
+          <input type="text" name="search" placeholder="Search your favorite movie ..." [(ngModel)]="searchText">
+          <h4>
+              Your favorite movie's list ({{ favoriteMovies.length }})
+          </h4>
+          <ul>
+              <p class="filmItem" *ngFor="let movie of favoriteMovies | filter : searchText; let i = index">
+                  {{ movie.name }}
+                  <span><i class="fa fa-heart" (click)="removeMovieFromFavorite(i)"></i></span>
+              </p>
+          </ul>
+      </div>
+  </div>
+</section>

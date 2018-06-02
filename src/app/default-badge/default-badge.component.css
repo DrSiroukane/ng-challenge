@@ -1,0 +1,37 @@
+/*
+    Badge style
+ */
+.badge {
+  position: absolute;
+  background: none;
+  top: 4px;
+  right: 4px;
+  padding: 0;
+}
+
+.badge .defaultBadge {
+  -webkit-box-shadow: -4px 4px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: -4px 4px 5px rgba(0, 0, 0, 0.3);
+}
+
+.defaultBadge {
+  background-color: #a5817c;
+  padding: 20px;
+  color: white;
+  border-radius: 4px;
+  min-width: 280px;
+}
+
+.defaultBadge img {
+  width: 60px;
+  margin-bottom: 20px;
+}
+
+.defaultBadge p {
+  font-weight: 400;
+  min-height: 0;
+}
+
+.defaultBadge p:last-child {
+  margin-bottom: 0;
+}

@@ -1,1 +1,35 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,700");
+
 /* You can add global styles to this file, and also import other style files */
+body {
+  font-family: 'Raleway', 'Arial';
+}
+
+.btn {
+  background-color: #a5817c;
+  color: white;
+  padding: 8px 14px;
+  margin-left: 3px;
+}
+
+.defaultBackground {
+  background-color: #343a40;
+  padding: 20px;
+}
+
+/* Accordion */
+.panel-default {
+  border: none;
+}
+
+.containerBackground {
+  background: #eeeeef;
+}
+
+footer > p {
+  color: #343a40;
+  text-align: center;
+  font-size: 10px;
+  padding: 15px;
+  margin-bottom: 0;
+}
