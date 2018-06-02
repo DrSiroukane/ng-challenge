@@ -22,12 +22,12 @@ export class HomeComponent implements OnInit {
     {
       'visible': false,
       'txt': 'It\'s your fifth movie added to your favorite list !',
-      'img': '../../assets/img/badge.png'
+      'img': '/assets/img/badge.png'
     },
     {
       'visible': false,
       'txt': 'It\'s your second time removing movie',
-      'img': '../../assets/img/badge.png'
+      'img': '/assets/img/badge.png'
     }
   ];
 
